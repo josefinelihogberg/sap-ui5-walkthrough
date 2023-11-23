@@ -5,7 +5,7 @@
 
   "sap.app": {
     "_version": "1.1.0",
-    "id": "sap-ui-walkthrough",
+    "id": "sap.ui.demo.walkthrough",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -67,7 +67,7 @@
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
           "bundleName": "sap.ui.demo.walkthrough.i18n.i18n",
-          "suppoertedLocales": [""],
+          "supportedLocales": [""],
           "fallbackLocale": ""
         },
         "uri": "<uriRelativeToManifest>"
