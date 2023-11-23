@@ -9,5 +9,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "idNamingPattern": "",
+  "eventNamingPattern": "",
+	"ui5": {
+		"ui5linter": {
+			"componentsToInclude": ["com.test.my.app"],
+			"componentsToExclude": ["com.test.my.lib"]
+		}
+	}
 }
