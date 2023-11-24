@@ -4,11 +4,23 @@
   xmlns="sap.m"
 >
   <List
-    headerText="{i18n>invoiceListTitle}"
+    id="invoiceList"
     class="sapUiResponsiveMargin"
     width="auto"
     items="{invoice>/Invoices}"
   >
+    <headerToolbar>
+      <Toolbar>
+        <Title text="{i18n>invoiceListTitle}" />
+        <ToolbarSpacer />
+        <SearchField
+          placeholder="Search by product name"
+          showSearchButton="true"
+          width="50%"
+          search=".onFilterInvoices"
+        />
+      </Toolbar>
+    </headerToolbar>
     <items>
       <ObjectListItem
         title="{invoice>Quantity} x {invoice>ProductName}"
