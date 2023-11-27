@@ -1,8 +1,9 @@
 <mvc:View
-controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
-xmlns="sap.m"
-xmlns:mvc="sap.ui.core.mvc">
-<!-- This part is only for sorting by ProductName
+    controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+>
+    <!-- This part is only for sorting by ProductName
   <List
         id="invoiceList"
         headerText="{i18n>invoiceListTitle}"
@@ -25,20 +26,28 @@ xmlns:mvc="sap.ui.core.mvc">
             sorter: {
                 path: 'ShipperName',
                 group: true
-                }
-            }">
+            }
+        }"
+    >
         <headerToolbar>
             <Toolbar>
-            <Title text="{i18n>invoiceListTitle}"/>
-            <ToolbarSpacer/>
-            <SearchField width="50%" search=".onFilterInvoices"/>
+                <Title text="{i18n>invoiceListTitle}" />
+                <ToolbarSpacer />
+                <SearchField
+                    width="50%"
+                    search=".onFilterInvoices"
+                />
             </Toolbar>
         </headerToolbar>
         <items>
             <ObjectListItem
                 title="{invoice>Quantity} x {invoice>ProductName}"
                 number="{
-                    parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
+                    parts: [{
+                        path: 'invoice>ExtendedPrice'
+                    }, {
+                        path: 'view>/currency'
+                    }],
                     type: 'sap.ui.model.type.Currency',
                     formatOptions: {
                         showMeasure: false,
@@ -46,14 +55,17 @@ xmlns:mvc="sap.ui.core.mvc">
                     }
                 }"
                 numberUnit="{view>/currency}"
-                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}">
+                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}"
+                type="Navigation"
+                press=".onPress"
+            >
                 <firstStatus>
                     <ObjectStatus text="{
                         path: 'invoice>Status',
                         formatter: '.formatter.statusText'
-                    }"/>
+                    }" />
                 </firstStatus>
-                </ObjectListItem>
+            </ObjectListItem>
         </items>
     </List>
 </mvc:View>
