@@ -28,7 +28,8 @@ xmlns:mvc="sap.ui.core.mvc">
                     parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
                     type: 'sap.ui.model.type.Currency',
                     formatOptions: {
-                        showMeasure: false
+                        showMeasure: false,
+                        preserveDecimal: false
                     }
                 }"
                 numberUnit="{view>/currency}"
