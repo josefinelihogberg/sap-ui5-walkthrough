@@ -4,20 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ui5 serve -o test/mockServer.html",
+    "start": "ui5 serve -o index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
-   
-    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "idNamingPattern": "",
   "eventNamingPattern": "",
-	"ui5": {
-		"ui5linter": {
-			"componentsToInclude": ["com.test.my.app"],
-			"componentsToExclude": ["com.test.my.lib"]
-		}
-	}
+  "ui5": {
+    "ui5linter": {
+      "componentsToInclude": [
+        "com.test.my.app"
+      ],
+      "componentsToExclude": [
+        "com.test.my.lib"
+      ]
+    }
+  }
 }
