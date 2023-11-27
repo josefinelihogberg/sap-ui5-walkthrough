@@ -32,9 +32,15 @@ sap.ui.define(
         const oBinding = oList.getBinding("items");
         oBinding.filter(aFilter);
       },
-      onPress: function () {
+      onPress: function (oEvent) {
+        const oItem = oEvent.getSource(); // Get clicked item
+
         const oRouter = this.getOwnerComponent().getRouter();
-        oRouter.navTo("detail");
+        oRouter.navTo("detail", {
+          invoicePath: window.encodeURIComponent(
+            oItem.getBindingContext("invoice").getPath().substr(1) // define "invoice" as model name
+          ),
+        });
       },
     });
   }
