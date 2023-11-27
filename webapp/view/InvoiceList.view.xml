@@ -2,6 +2,19 @@
 controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
 xmlns="sap.m"
 xmlns:mvc="sap.ui.core.mvc">
+<!-- This part is only for sorting by ProductName
+  <List
+        id="invoiceList"
+        headerText="{i18n>invoiceListTitle}"
+        class="saUiResponsiveMargin"
+        width="auto"
+        items="{
+            path: 'invoice>/Invoices',
+            sorter: {
+                path: 'ProductName',
+                }
+            }">
+-->
     <List
         id="invoiceList"
         headerText="{i18n>invoiceListTitle}"
