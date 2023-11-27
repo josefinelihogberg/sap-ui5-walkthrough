@@ -1,4 +1,5 @@
 sap.ui.define(
+<<<<<<< HEAD
   [
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
@@ -7,11 +8,13 @@ sap.ui.define(
     "sap/ui/model/FilterOperator",
   ],
   function (Controller, JSONModel, formatter, Filter, FilterOperator) {
+=======
+  ["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"],
+  function (Controller, JSONModel) {
+>>>>>>> parent of 8559926 (works)
     "use strict";
 
     return Controller.extend("sap.ui.demo.walkthrough.controller.InvoiceList", {
-      formatter: formatter,
-
       onInit: function () {
         var oViewModel = new JSONModel({
           currency: "EUR",
