@@ -21,6 +21,7 @@ sap.ui.define(
 
         // set device model
         const oDeviceModel = new JSONModel(Device);
+        // 默认是数据双向绑定，因为是只读模式，所以设置成单向绑定
         oDeviceModel.setDefaultBindingMode("OneWay");
         this.setModel(oDeviceModel, "device");
 

@@ -8,6 +8,9 @@
     showNavButton="true"
     navButtonPress=".onNavBack"
   >
+    <!-- 给ObjectHeader添加的两个设备自适应属性：responsive和fullScreenOptimized 与后面的<attributes>搭配使用,
+   <attributes> tag 里面的内容会自动调整位置
+    -->
     <ObjectHeader
       responsive="true"
       fullScreenOptimized="true"
