@@ -78,12 +78,7 @@
                     />
                     <ObjectIdentifier title="{invoice>ProductName}" />
                     <Text text="{
-                        parts: [
-                            'invoice>Status',
-                            'i18n>invoiceStatusA',
-                            'i18n>invoiceStatusB',
-                            'i18n>invoiceStatusC'
-                        ],
+                        path: 'invoice>Status',
                         formatter: '.formatter.statusText'
                     }" />
                     <Text text="{invoice>ShipperName}" />
