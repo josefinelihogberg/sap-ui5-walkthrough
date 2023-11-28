@@ -32,11 +32,19 @@ sap.ui.define(
         const oBinding = oList.getBinding("items");
         oBinding.filter(aFilter);
       },
-      onPress: function (oEvent) {
-        const oItem = oEvent.getSource(); // Get clicked item
 
+      // Click on a specific list item on the invoice list
+      onPress: function (oEvent) {
+        // Get clicked item 取得用户点击的控件，这里得到的是ObjectListItem
+        const oItem = oEvent.getSource();
+        // oItem.getBindingContext("invoice")的返回值是：
+        // { oModel: constructor, sPath: '/Invoices/4', bForceRefresh: false, sDeepPath: '' }
+        // oItem.getBindingContext("invoice").getPath()的返回值是：'/Invoices/4'
+        // oItem.getBindingContext("invoice").getPath().substr(1): 把'/Invoices/4'字符串最前面的"/"去掉
+        // 在URL里"/"是非法字符，在这里去掉后，在后面的详细页面，还要手动加上。
         const oRouter = this.getOwnerComponent().getRouter();
         oRouter.navTo("detail", {
+          //就是把'Invoices/4'里的数字加密，最后返回：'Invoices%252F4'
           invoicePath: window.encodeURIComponent(
             oItem.getBindingContext("invoice").getPath().substr(1) // define "invoice" as model name
           ),
