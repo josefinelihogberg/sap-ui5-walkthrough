@@ -7,13 +7,15 @@
         headerText="{i18n>helloPanelTitle}"
         class="sapUiResponsiveMargin"
         width="auto"
+        expandable="{device>/system/phone}"
+        expanded="{= !${device>/system/phone} }"
     >
         <content>
             <Button
                 id="helloDialogButton"
                 icon="sap-icon://world"
                 text="{i18n>openDialogButtonText}"
-                class="sapUiSmallMarginEnd"
+                class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"
                 press=".onOpenDialog"
             />
             <Button
@@ -23,12 +25,12 @@
             />
             <Input
                 value="{/recipient/name}"
-                description="Hello {/recipient/name}"
+                description="Hello"
                 valueLiveUpdate="true"
                 width="60%"
             />
             <FormattedText
-                htmlText="Hello"
+                htmlText="Hello {/recipient/name}"
                 class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"
             />
         </content>

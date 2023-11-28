@@ -1,9 +1,14 @@
 sap.ui.define(
-  ["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History"],
-  function (Controller, History) {
+  ["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/ui/model/json/JSONModel"],
+  function (Controller, History, JSONModel) {
     "use strict";
     return Controller.extend("sap.ui.demo.walkthrough.controller.Detail", {
       onInit: function () {
+        const oViewModel = new JSONModel({
+          currency: "EUR",
+        });
+        this.getView().setModel(oViewModel, "view");
+
         var oRouter = this.getOwnerComponent().getRouter();
         // 这行代码是注册回调函数，当detail的router命中后（不管是通过URL还是，点击一栏的明细行），调用回调函数onObjectMatched
         oRouter.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
